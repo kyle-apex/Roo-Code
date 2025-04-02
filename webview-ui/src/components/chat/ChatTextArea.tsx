@@ -32,6 +32,7 @@ interface ChatTextAreaProps {
 	inputValue: string
 	setInputValue: (value: string) => void
 	textAreaDisabled: boolean
+	selectApiConfigDisabled: boolean
 	placeholderText: string
 	selectedImages: string[]
 	setSelectedImages: React.Dispatch<React.SetStateAction<string[]>>
@@ -50,6 +51,7 @@ const ChatTextArea = forwardRef<HTMLTextAreaElement, ChatTextAreaProps>(
 			inputValue,
 			setInputValue,
 			textAreaDisabled,
+			selectApiConfigDisabled,
 			placeholderText,
 			selectedImages,
 			setSelectedImages,
@@ -938,6 +940,9 @@ const ChatTextArea = forwardRef<HTMLTextAreaElement, ChatTextAreaProps>(
 						<div className="shrink-0">
 							<SelectDropdown
 								value={mode}
+								disabled={
+									false
+								} /* Always enable the model selector regardless of textAreaDisabled state */
 								title={t("chat:selectMode")}
 								options={[
 									{
@@ -975,7 +980,7 @@ const ChatTextArea = forwardRef<HTMLTextAreaElement, ChatTextAreaProps>(
 						<div className={cn("flex-1", "min-w-0", "overflow-hidden")}>
 							<SelectDropdown
 								value={currentConfigId}
-								disabled={textAreaDisabled}
+								disabled={selectApiConfigDisabled}
 								title={t("chat:selectApiConfig")}
 								placeholder={displayName} // Always show the current name
 								options={[
