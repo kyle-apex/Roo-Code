@@ -940,9 +940,6 @@ const ChatTextArea = forwardRef<HTMLTextAreaElement, ChatTextAreaProps>(
 						<div className="shrink-0">
 							<SelectDropdown
 								value={mode}
-								disabled={
-									false
-								} /* Always enable the model selector regardless of textAreaDisabled state */
 								title={t("chat:selectMode")}
 								options={[
 									{
