@@ -1195,9 +1195,7 @@ const ChatView = ({ isHidden, showAnnouncement, hideAnnouncement, showHistoryVie
 						paddingBottom: "10px",
 					}}>
 					{telemetrySetting === "unset" && <TelemetryBanner />}
-					{(showAnnouncement || true) && (
-						<Announcement version={version} hideAnnouncement={hideAnnouncement} />
-					)}
+					{showAnnouncement && <Announcement version={version} hideAnnouncement={hideAnnouncement} />}
 					<div style={{ padding: "0 20px", flexShrink: 0 }}>
 						<h2>{t("chat:greeting")}</h2>
 						<p>{t("chat:aboutMe")}</p>
