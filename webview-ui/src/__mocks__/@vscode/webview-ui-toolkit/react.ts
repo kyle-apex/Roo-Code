@@ -79,9 +79,6 @@ export const VSCodeTextArea: React.FC<VSCodeProps> = ({ value, onChange, ...prop
 		...props,
 	})
 
-export const VSCodeLink: React.FC<VSCodeProps> = ({ children, href, ...props }) =>
-	React.createElement("a", { href: href || "#", ...props }, children)
-
 export const VSCodeDropdown: React.FC<VSCodeProps> = ({ children, value, onChange, ...props }) =>
 	React.createElement("select", { value, onChange, ...props }, children)
 

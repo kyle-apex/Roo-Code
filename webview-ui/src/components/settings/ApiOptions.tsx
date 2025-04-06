@@ -5,7 +5,8 @@ import { getRequestyAuthUrl, getOpenRouterAuthUrl, getGlamaAuthUrl } from "../..
 import { useDebounce, useEvent } from "react-use"
 import { LanguageModelChatSelector } from "vscode"
 import { Checkbox } from "vscrui"
-import { VSCodeLink, VSCodeRadio, VSCodeRadioGroup, VSCodeTextField } from "@vscode/webview-ui-toolkit/react"
+import { VSCodeRadio, VSCodeRadioGroup, VSCodeTextField } from "@vscode/webview-ui-toolkit/react"
+import { Link } from "@/components/ui"
 import { ExternalLinkIcon } from "@radix-ui/react-icons"
 
 import {
@@ -281,14 +282,14 @@ const ApiOptions = ({
 					<label className="block font-medium mb-1">{t("settings:providers.apiProvider")}</label>
 					{getSelectedProviderDocUrl() && (
 						<div className="text-xs text-vscode-descriptionForeground">
-							<VSCodeLink
+							<Link
 								href={getSelectedProviderDocUrl()!.url}
-								className="hover:text-vscode-foreground"
+								className="hover:text-vscode-foreground text-sm"
 								target="_blank">
 								{t("settings:providers.providerDocumentation", {
 									provider: getSelectedProviderDocUrl()!.name,
 								})}
-							</VSCodeLink>
+							</Link>
 						</div>
 					)}
 				</div>
@@ -638,25 +639,25 @@ const ApiOptions = ({
 					<div className="text-sm text-vscode-descriptionForeground">
 						<div>{t("settings:providers.googleCloudSetup.title")}</div>
 						<div>
-							<VSCodeLink
+							<Link
 								href="https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/use-claude#before_you_begin"
 								className="text-sm">
 								{t("settings:providers.googleCloudSetup.step1")}
-							</VSCodeLink>
+							</Link>
 						</div>
 						<div>
-							<VSCodeLink
+							<Link
 								href="https://cloud.google.com/docs/authentication/provide-credentials-adc#google-idp"
 								className="text-sm">
 								{t("settings:providers.googleCloudSetup.step2")}
-							</VSCodeLink>
+							</Link>
 						</div>
 						<div>
-							<VSCodeLink
+							<Link
 								href="https://developers.google.com/workspace/guides/create-credentials?hl=en#service-account"
 								className="text-sm">
 								{t("settings:providers.googleCloudSetup.step3")}
-							</VSCodeLink>
+							</Link>
 						</div>
 					</div>
 					<VSCodeTextField
@@ -1269,8 +1270,8 @@ const ApiOptions = ({
 						<Trans
 							i18nKey="settings:providers.lmStudio.description"
 							components={{
-								a: <VSCodeLink href="https://lmstudio.ai/docs" />,
-								b: <VSCodeLink href="https://lmstudio.ai/docs/basics/server" />,
+								a: <Link href="https://lmstudio.ai/docs" />,
+								b: <Link href="https://lmstudio.ai/docs/basics/server" />,
 								span: (
 									<span className="text-vscode-errorForeground ml-1">
 										<span className="font-medium">Note:</span>

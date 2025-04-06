@@ -78,7 +78,6 @@ jest.mock("@vscode/webview-ui-toolkit/react", () => ({
 			data-testid={dataTestId}
 		/>
 	),
-	VSCodeLink: ({ children, href }: any) => <a href={href || "#"}>{children}</a>,
 	VSCodeRadio: ({ children, value, checked, onChange }: any) => (
 		<input type="radio" value={value} checked={checked} onChange={onChange} />
 	),
