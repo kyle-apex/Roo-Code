@@ -31,6 +31,12 @@ jest.mock("../../../utils/vscode", () => ({
 	},
 }))
 
+// Mock Slider component
+jest.mock("@/components/ui", () => ({
+	...jest.requireActual("@/components/ui"),
+	Link: ({ children, href }: any) => <a href={href || "#"}>{children}</a>,
+}))
+
 // Mock components that use ESM dependencies
 jest.mock("../BrowserSessionRow", () => ({
 	__esModule: true,
@@ -126,6 +132,9 @@ jest.mock("@vscode/webview-ui-toolkit/react", () => ({
 				placeholder={placeholder}
 			/>
 		)
+	},
+	Link: function MockLink({ children, href }: { children: React.ReactNode; href?: string }) {
+		return <a href={href}>{children}</a>
 	},
 }))
 

@@ -95,6 +95,7 @@ jest.mock("@/components/ui", () => ({
 			data-testid={dataTestId}
 		/>
 	),
+	Link: ({ children, href }: any) => <a href={href || "#"}>{children}</a>,
 }))
 
 // Mock window.postMessage to trigger state hydration

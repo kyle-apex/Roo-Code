@@ -53,6 +53,7 @@ jest.mock("@/components/ui", () => ({
 			{children}
 		</button>
 	),
+	Link: ({ children, href }: any) => <a href={href}>{children}</a>,
 }))
 
 jest.mock("../TemperatureControl", () => ({
