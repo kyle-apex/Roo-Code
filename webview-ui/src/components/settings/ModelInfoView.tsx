@@ -1,5 +1,5 @@
 import { useMemo } from "react"
-import { VSCodeLink } from "@vscode/webview-ui-toolkit/react"
+import { Link } from "@/components/ui"
 import { useAppTranslation } from "@/i18n/TranslationContext"
 
 import { formatPrice } from "@/utils/formatPrice"
@@ -80,9 +80,9 @@ export const ModelInfoView = ({
 					: t("settings:modelInfo.gemini.freeRequests", {
 							count: selectedModelId && selectedModelId.includes("flash") ? 15 : 2,
 						})}{" "}
-				<VSCodeLink href="https://ai.google.dev/pricing" className="text-sm">
+				<Link href="https://ai.google.dev/pricing" className="text-sm">
 					{t("settings:modelInfo.gemini.pricingDetails")}
-				</VSCodeLink>
+				</Link>
 			</span>
 		),
 	].filter(Boolean)

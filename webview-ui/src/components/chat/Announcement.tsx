@@ -1,5 +1,5 @@
-import { VSCodeButton, VSCodeLink } from "@vscode/webview-ui-toolkit/react"
 import { memo } from "react"
+import { Button, Link } from "@/components/ui"
 import { useAppTranslation } from "@/i18n/TranslationContext"
 
 interface AnnouncementProps {
@@ -22,21 +22,22 @@ const Announcement = ({ version, hideAnnouncement }: AnnouncementProps) => {
 				position: "relative",
 				flexShrink: 0,
 			}}>
-			<VSCodeButton
-				appearance="icon"
+			<Button
+				variant="ghost"
+				size="icon"
 				onClick={hideAnnouncement}
 				title={t("chat:announcement.hideButton")}
-				style={{ position: "absolute", top: "8px", right: "8px" }}>
+				className="absolute top-2 right-2">
 				<span className="codicon codicon-close"></span>
-			</VSCodeButton>
+			</Button>
 			<h2 style={{ margin: "0 0 8px" }}>{t("chat:announcement.title")}</h2>
 
 			<p style={{ margin: "5px 0px" }}>{t("chat:announcement.description")}</p>
 
 			<p style={{ margin: "10px 0px 0px" }}>
-				<VSCodeLink
+				<Link
 					href="https://docs.roocode.com/features/boomerang-tasks"
-					onClick={(e) => {
+					onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
 						e.preventDefault()
 						window.postMessage(
 							{
@@ -48,7 +49,7 @@ const Announcement = ({ version, hideAnnouncement }: AnnouncementProps) => {
 						)
 					}}>
 					{t("chat:announcement.learnMore")}
-				</VSCodeLink>
+				</Link>
 			</p>
 		</div>
 	)

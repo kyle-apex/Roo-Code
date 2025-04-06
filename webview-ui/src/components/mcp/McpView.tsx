@@ -1,12 +1,7 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import {
-	VSCodeCheckbox,
-	VSCodeLink,
-	VSCodePanels,
-	VSCodePanelTab,
-	VSCodePanelView,
-} from "@vscode/webview-ui-toolkit/react"
+import { Link } from "@/components/ui"
+import { VSCodeCheckbox, VSCodePanels, VSCodePanelTab, VSCodePanelView } from "@vscode/webview-ui-toolkit/react"
 
 import { McpServer } from "../../../../src/shared/mcp"
 
@@ -51,14 +46,12 @@ const McpView = ({ onDone }: McpViewProps) => {
 						marginTop: "5px",
 					}}>
 					<Trans i18nKey="mcp:description">
-						<VSCodeLink href="https://github.com/modelcontextprotocol" style={{ display: "inline" }}>
+						<Link href="https://github.com/modelcontextprotocol" style={{ display: "inline" }}>
 							Model Context Protocol
-						</VSCodeLink>
-						<VSCodeLink
-							href="https://github.com/modelcontextprotocol/servers"
-							style={{ display: "inline" }}>
+						</Link>
+						<Link href="https://github.com/modelcontextprotocol/servers" style={{ display: "inline" }}>
 							community-made servers
-						</VSCodeLink>
+						</Link>
 					</Trans>
 				</div>
 

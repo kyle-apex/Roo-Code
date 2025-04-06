@@ -3,7 +3,7 @@ import { useCallback, useState } from "react"
 import { useExtensionState } from "../../context/ExtensionStateContext"
 import { useAppTranslation } from "../../i18n/TranslationContext"
 import { Trans } from "react-i18next"
-import { VSCodeLink } from "@vscode/webview-ui-toolkit/react"
+import { Link } from "@/components/ui"
 import { vscode } from "../../utils/vscode"
 
 interface AutoApproveAction {
@@ -252,7 +252,7 @@ const AutoApproveMenu = ({ style }: AutoApproveMenuProps) => {
 						<Trans
 							i18nKey="chat:autoApprove.description"
 							components={{
-								settingsLink: <VSCodeLink href="#" onClick={handleOpenSettings} />,
+								settingsLink: <Link href="#" onClick={handleOpenSettings} />,
 							}}
 						/>
 					</div>

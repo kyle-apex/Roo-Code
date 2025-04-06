@@ -3,7 +3,8 @@ import { useAppTranslation } from "@/i18n/TranslationContext"
 import { Trans } from "react-i18next"
 import { Info, Download, Upload, TriangleAlert } from "lucide-react"
 
-import { VSCodeCheckbox, VSCodeLink } from "@vscode/webview-ui-toolkit/react"
+import { VSCodeCheckbox } from "@vscode/webview-ui-toolkit/react"
+import { Link } from "@/components/ui"
 
 import { TelemetrySetting } from "../../../../src/shared/TelemetrySetting"
 
@@ -51,9 +52,9 @@ export const About = ({ version, telemetrySetting, setTelemetrySetting, classNam
 					<Trans
 						i18nKey="settings:footer.feedback"
 						components={{
-							githubLink: <VSCodeLink href="https://github.com/RooVetGit/Roo-Code" />,
-							redditLink: <VSCodeLink href="https://reddit.com/r/RooCode" />,
-							discordLink: <VSCodeLink href="https://discord.gg/roocode" />,
+							githubLink: <Link href="https://github.com/RooVetGit/Roo-Code" />,
+							redditLink: <Link href="https://reddit.com/r/RooCode" />,
+							discordLink: <Link href="https://discord.gg/roocode" />,
 						}}
 					/>
 				</div>

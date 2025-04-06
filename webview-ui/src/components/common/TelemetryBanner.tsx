@@ -1,4 +1,5 @@
-import { VSCodeButton, VSCodeLink } from "@vscode/webview-ui-toolkit/react"
+import { VSCodeButton } from "@vscode/webview-ui-toolkit/react"
+import { Link } from "@/components/ui"
 import { memo, useState } from "react"
 import styled from "styled-components"
 import { vscode } from "../../utils/vscode"
@@ -53,7 +54,7 @@ const TelemetryBanner = () => {
 						<Trans
 							i18nKey="welcome:telemetry.changeSettings"
 							components={{
-								settingsLink: <VSCodeLink href="#" onClick={handleOpenSettings} />,
+								settingsLink: <Link href="#" onClick={handleOpenSettings} />,
 							}}
 						/>
 						.

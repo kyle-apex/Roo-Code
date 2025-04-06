@@ -1,4 +1,5 @@
-import { VSCodeButton, VSCodeLink } from "@vscode/webview-ui-toolkit/react"
+import { VSCodeButton } from "@vscode/webview-ui-toolkit/react"
+import { Link } from "@/components/ui"
 import debounce from "debounce"
 import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import { useDeepCompareEffect, useEvent, useMount } from "react-use"
@@ -1007,15 +1008,15 @@ const ChatView = ({ isHidden, showAnnouncement, hideAnnouncement, showHistoryVie
 				<span className="codicon codicon-loading codicon-modifier-spin mr-2" />
 				<span className="text-vscode-foreground">
 					Still initializing checkpoint... If this takes too long, you can{" "}
-					<VSCodeLink
+					<Link
 						href="#"
-						onClick={(e) => {
+						onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
 							e.preventDefault()
 							window.postMessage({ type: "action", action: "settingsButtonClicked" }, "*")
 						}}
 						className="inline px-0.5">
 						disable checkpoints in settings
-					</VSCodeLink>{" "}
+					</Link>{" "}
 					and restart your task.
 				</span>
 			</div>
@@ -1194,7 +1195,9 @@ const ChatView = ({ isHidden, showAnnouncement, hideAnnouncement, showHistoryVie
 						paddingBottom: "10px",
 					}}>
 					{telemetrySetting === "unset" && <TelemetryBanner />}
-					{showAnnouncement && <Announcement version={version} hideAnnouncement={hideAnnouncement} />}
+					{(showAnnouncement || true) && (
+						<Announcement version={version} hideAnnouncement={hideAnnouncement} />
+					)}
 					<div style={{ padding: "0 20px", flexShrink: 0 }}>
 						<h2>{t("chat:greeting")}</h2>
 						<p>{t("chat:aboutMe")}</p>

@@ -1,4 +1,4 @@
-import { VSCodeLink } from "@vscode/webview-ui-toolkit/react"
+import { Link } from "@/components/ui"
 
 import { useRequestyKeyInfo } from "@/components/ui/hooks/useRequestyKeyInfo"
 
@@ -14,8 +14,8 @@ export const RequestyBalanceDisplay = ({ apiKey }: { apiKey: string }) => {
 	const formattedBalance = balance.toFixed(2)
 
 	return (
-		<VSCodeLink href="https://app.requesty.ai/settings" className="text-vscode-foreground hover:underline">
+		<Link href="https://app.requesty.ai/settings" className="text-vscode-foreground hover:underline">
 			${formattedBalance}
-		</VSCodeLink>
+		</Link>
 	)
 }

@@ -1,4 +1,4 @@
-import { VSCodeLink } from "@vscode/webview-ui-toolkit/react"
+import { Link } from "@/components/ui"
 import { memo, useEffect, useRef, useState } from "react"
 import { useRemark } from "react-remark"
 
@@ -40,7 +40,7 @@ export const ModelDescriptionMarkdown = memo(
 					</div>
 				</div>
 				<CollapsibleTrigger asChild className={cn({ hidden: !isExpandable })}>
-					<VSCodeLink className="text-sm">{isExpanded ? "Less" : "More"}</VSCodeLink>
+					<Link className="text-sm">{isExpanded ? "Less" : "More"}</Link>
 				</CollapsibleTrigger>
 			</Collapsible>
 		)
