@@ -4,13 +4,12 @@ import { Trans } from "react-i18next"
 import { Info, Download, Upload, TriangleAlert } from "lucide-react"
 
 import { VSCodeCheckbox } from "@vscode/webview-ui-toolkit/react"
-import { Link } from "@/components/ui"
 
 import { TelemetrySetting } from "../../../../src/shared/TelemetrySetting"
 
 import { vscode } from "@/utils/vscode"
 import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui"
+import { Button, Link } from "@/components/ui"
 
 import { SectionHeader } from "./SectionHeader"
 import { Section } from "./Section"

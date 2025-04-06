@@ -1,6 +1,5 @@
 import { useMemo, useState, useCallback, useEffect, useRef } from "react"
 import { Trans } from "react-i18next"
-import { Link } from "@/components/ui"
 import { ChevronsUpDown, Check, X } from "lucide-react"
 
 import { ProviderSettings, ModelInfo } from "../../../../src/schemas"
@@ -8,16 +7,17 @@ import { ProviderSettings, ModelInfo } from "../../../../src/schemas"
 import { useAppTranslation } from "@/i18n/TranslationContext"
 import { cn } from "@/lib/utils"
 import {
+	Button,
 	Command,
 	CommandEmpty,
 	CommandGroup,
 	CommandInput,
 	CommandItem,
 	CommandList,
+	Link,
 	Popover,
 	PopoverContent,
 	PopoverTrigger,
-	Button,
 } from "@/components/ui"
 
 import { normalizeApiConfiguration } from "./ApiOptions"
